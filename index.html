@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>github上传测试</title>
+</head>
+<body>
+请输入月薪:<input type="text" name="wage" id="wage"><br>
+请输入涨幅:<input type="text" id="gain"><br>
+请输入年限:<input type="text" id="year">
+<input type="submit" value="提交" id="btn3"><br>
+
+请输入时间:<input type="text" id="time">
+<input type="submit" id="btn"><br>
+
+请输入华氏温度:<input type="text" id="fahrenheit">
+<input type="submit" id="btn2"><br>
+
+请输入数值:<input type="text" id="txt" name="number">
+<input type="submit" onclick="test()"><br>
+<script type="text/javascript">
+    function test() {
+        var num= document.getElementById('txt').value;
+        var bai = parseInt(num/100);
+        var shi = parseInt(num/10)%10;
+        var ge = num%10;
+        alert("百位为:"+bai+"十位为:"+shi+"个位为:"+ge)
+    }
+    document.getElementById("btn3").onclick=function () {
+        var iWage = document.getElementById('wage').value;
+        var iGain = document.getElementById('gain').value;
+        var iYear= document.getElementById('year').value;
+        var sum = iWage*(iGain/100)*(iYear-1)+(iWage-0);
+        alert("您的工资为:"+sum);
+    };
+    document.getElementById("btn").onclick = function () {
+        var iTime = document.getElementById('time').value;
+        var hour = iTime%24;
+        var day = parseInt(iTime/24);
+        alert("一共:"+day+"天"+hour+"小时");
+    };
+    document.getElementById("btn2").onclick = function () {
+        var iFahrenheit = document.getElementById('fahrenheit').value;
+        var celsius = 5/9.0*(iFahrenheit-32);
+        alert("当地华氏温度为:"+iFahrenheit+",摄氏温度为:"+celsius.toFixed(2)+".");
+    }
+</script>
+</body>
+</html>
